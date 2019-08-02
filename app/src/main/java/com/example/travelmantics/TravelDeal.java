@@ -1,6 +1,10 @@
 package com.example.travelmantics;
 
-public class TravelDeal {
+import java.io.Serializable;
+
+
+//better to use parcelable here for better performance
+public class TravelDeal implements Serializable {
     private String id;
     private String title;
     private String description;
