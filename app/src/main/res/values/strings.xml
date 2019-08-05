@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Travelmantics</string>
+    <string name="comment">Comment</string>
+    <string name="description"><u>Description</u></string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="deal_label_val">How is this deal?</string>
+    <string name="ratings" >Rate</string>
+    <string name="comment_label"><u>Comments</u></string>
+    <string name="post_a_comment_too">Post a comment too</string>
+    <string name="name_a_price">Name a Price</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="entertitle">Enter a title</string>
 </resources>

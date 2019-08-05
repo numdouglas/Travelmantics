@@ -69,8 +69,6 @@ public class FireBaseUtil {
                         checkAdmin(userid);
                     }
 
-                    Toast.makeText(callerActivity.getBaseContext(),"Welcome back",Toast.LENGTH_LONG).show();
-
                 }
             };
 connectStorage();

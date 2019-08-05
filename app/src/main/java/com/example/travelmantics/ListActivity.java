@@ -32,46 +32,6 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-       /* FireBaseUtil.openFbReference("traveldeals");
-
-        mFirebaseDatabase=FireBaseUtil.mFirebaseDatabase;
-        mDatabseReference=FireBaseUtil.mDatabaseReference;
-
-        mChildListener=new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                TravelDeal td=dataSnapshot.getValue(TravelDeal.class);
-                Log.d("Deal: ",td.getTitle());
-                //save the push id so we can easily read this data later
-                td.setId(dataSnapshot.getKey());
-                deals.add(td);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
-        mDatabseReference.addChildEventListener(mChildListener);
-    }*/
-
-
-
 
     }
 
@@ -84,9 +44,9 @@ public class ListActivity extends AppCompatActivity {
     MenuItem insertMenu=menu.findItem(R.id.insert_menu);
     if(FireBaseUtil.isAdmin==true){
         insertMenu.setVisible(true);
+
     }
  else {insertMenu.setVisible(false);}
-
     return true;
 
 }
@@ -99,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.insert_menu:
-                Intent intent=new Intent(this, DealActivity.class);
+                Intent intent=new Intent(this, AdminActivity.class);
                 startActivity(intent);
                 return true;
 
@@ -134,7 +94,7 @@ protected void onPause(){
     RecyclerView rvDeals=findViewById(R.id.rvdeals);
     final DealAdapter adapter=new DealAdapter();
     rvDeals.setAdapter(adapter);
-    LinearLayoutManager dealsLayoutManager=new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+    LinearLayoutManager dealsLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
     rvDeals.setLayoutManager(dealsLayoutManager);
         FireBaseUtil.attachListener();
 }
