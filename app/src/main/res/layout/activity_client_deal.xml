@@ -86,12 +86,14 @@
                 android:id="@+id/comment_entry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginEnd="120dp"
                 android:layout_marginBottom="8dp"
                 android:hint="@string/post_a_comment_too"
                 app:layout_constraintBottom_toTopOf="@+id/send_comment"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline9"
                 app:layout_constraintTop_toBottomOf="@+id/comments" />
 
             <androidx.constraintlayout.widget.Guideline

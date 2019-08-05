@@ -83,7 +83,7 @@ Transformation transformation;
 
         Intent intent = getIntent();
         //creating a new deal
-        TravelDeal deal = (TravelDeal) intent.getSerializableExtra("Deal");
+        TravelDeal deal = (TravelDeal) intent.getParcelableExtra("Deal");
         if (deal == null) {
             deal = new TravelDeal();
 

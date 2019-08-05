@@ -1,10 +1,28 @@
 package com.example.travelmantics;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
 
 //better to use parcelable here for better performance
-public class TravelDeal implements Serializable {
+public class TravelDeal implements Parcelable {
+
+    //use creator class to write a new parcel or a set
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public TravelDeal createFromParcel(Parcel in) {
+            return new TravelDeal(in);
+        }
+
+        public TravelDeal[] newArray(int size) {
+            return new TravelDeal[size];
+        }
+    };
+//variables well store in a parcel
+
+
+
     private String id;
     private String title;
     private String description;
@@ -91,6 +109,38 @@ public class TravelDeal implements Serializable {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+
+    // Parcel the variables
+    public TravelDeal(Parcel in){
+        this.id = in.readString();
+        this.title =  in.readString();
+        this.description =  in.readString();
+        this.price =  in.readString();
+        this.imageUrl=in.readString();
+        this.imageName=in.readString();
+        this.comments=in.readString();
+        this.rating=in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.description);
+        dest.writeString(this.price);
+        dest.writeString(this.imageUrl);
+        dest.writeString(this.imageName);
+        dest.writeString(this.comments);
+        dest.writeString(this.rating);
+
     }
 
 }
