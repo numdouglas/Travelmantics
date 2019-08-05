@@ -130,7 +130,7 @@ connectStorage();
         caller.startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
+                        .setAvailableProviders(providers).setLogo(R.drawable.ic_tour_logo_text).setTheme(R.style.LoginTheme)
                         .build(),
                 RC_SIGN_IN);
     }

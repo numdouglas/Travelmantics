@@ -26,12 +26,13 @@ public class ListActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabseReference;
     private ChildEventListener mChildListener;
-
+    private static final int RC_SIGN_IN = 343;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
 
     }
 
