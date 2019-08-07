@@ -37,20 +37,20 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
-    MenuInflater inflater=getMenuInflater();
-    inflater.inflate(R.menu.list_activity_menu,menu);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.list_activity_menu,menu);
 
-    MenuItem insertMenu=menu.findItem(R.id.insert_menu);
-    if(FireBaseUtil.isAdmin==true){
-        insertMenu.setVisible(true);
+        MenuItem insertMenu=menu.findItem(R.id.insert_menu);
+        if(FireBaseUtil.isAdmin==true){
+            insertMenu.setVisible(true);
+
+        }
+        else {insertMenu.setVisible(false);}
+        return true;
 
     }
- else {insertMenu.setVisible(false);}
-    return true;
-
-}
 
 
 
@@ -79,30 +79,30 @@ public class ListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-}
+    }
 
 
-@Override
-protected void onPause(){
+    @Override
+    protected void onPause(){
         super.onPause();
         FireBaseUtil.detachListener();
-}
+    }
 
-@Override
+    @Override
     protected void onResume(){
         super.onResume();
-    FireBaseUtil.openFbReference("traveldeals",this);
-    RecyclerView rvDeals=findViewById(R.id.rvdeals);
-    final DealAdapter adapter=new DealAdapter();
-    rvDeals.setAdapter(adapter);
-    LinearLayoutManager dealsLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-    rvDeals.setLayoutManager(dealsLayoutManager);
+        FireBaseUtil.openFbReference("traveldeals",this);
+        RecyclerView rvDeals=findViewById(R.id.rvdeals);
+        final DealAdapter adapter=new DealAdapter();
+        rvDeals.setAdapter(adapter);
+        LinearLayoutManager dealsLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        rvDeals.setLayoutManager(dealsLayoutManager);
         FireBaseUtil.attachListener();
-}
+    }
 
-//hide contents a normal user would not need to see
-public void  showMenu(){
+    //hide contents a normal user would not need to see
+    public void  showMenu(){
         invalidateOptionsMenu();
-}
+    }
 
 }

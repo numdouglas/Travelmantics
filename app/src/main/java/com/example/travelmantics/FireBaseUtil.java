@@ -42,7 +42,7 @@ public class FireBaseUtil {
 
 
     public static void attachListener(){
-         mFirebaseAuth.addAuthStateListener(mAuthListener);
+        mFirebaseAuth.addAuthStateListener(mAuthListener);
     }
 
     public static void detachListener(){
@@ -62,16 +62,16 @@ public class FireBaseUtil {
                     if (firebaseAuth.getCurrentUser()==null){
 
 
-                    FireBaseUtil.signIn();}
+                        FireBaseUtil.signIn();}
 
-                   else {
+                    else {
                         String userid=firebaseAuth.getUid();
                         checkAdmin(userid);
                     }
 
                 }
             };
-connectStorage();
+            connectStorage();
 
         }
 
@@ -91,7 +91,7 @@ connectStorage();
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 FireBaseUtil.isAdmin=true;
                 caller.showMenu();
-             }
+            }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

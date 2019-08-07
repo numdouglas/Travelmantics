@@ -64,11 +64,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@color/fui_transparent"
+        android:src="@drawable/ic_rect_border"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/right_text_guideline"
-        app:layout_constraintTop_toTopOf="@+id/bottom_guideline" />
+        app:layout_constraintTop_toTopOf="@+id/bottom_guideline"
+        tools:srcCompat="@drawable/ic_rect_border" />
 
     <ProgressBar
         android:id="@+id/progressBar"
